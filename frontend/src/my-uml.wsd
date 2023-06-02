@@ -1,0 +1,75 @@
+@startuml
+
+' Define the namespace for the application
+namespace MyApp {
+
+ ' Define the classes and their relationships
+ class User {
+ - userId: int
+ - username: string
+ - password: string
+ - email: string
+ - firstName: string
+ - lastName: string
+ + register(): void
+ + login(): void
+ + logout(): void
+ + updateProfile(): void
+ + deleteAccount(): void
+ }
+
+ class Post {
+ - postId: int
+ - userId: int
+ - title: string
+ - content: string
+ - createdAt: date
+ + create(): void
+ + read(): void
+ + update(): void
+ + delete(): void
+ }
+
+ ' Define the associations between classes
+ User -- Post : "1" *-- "*"
+ User "1" -- "1" User : "follows"
+}
+
+' Define the components in the system
+
+
+
+' Define the connections between components and classes
+
+Frontend ..> login : Access Application
+
+Frontend ..> signup : Access Application
+
+Frontend ..> home : Use Application
+
+Frontend ..> profile : Use Application
+
+Frontend ..> review : Use Application
+
+Frontend ..> updateReview : Use Application
+
+Frontend ..> api : Send Requests
+
+api ..> server : Process Requests
+
+api ..> db : Access Data
+
+Frontend ..> server : Retrieve Data
+
+Frontend ..> server : Update Data
+
+Frontend ..> server : Authenticate User
+
+Frontend ..> server : Logout User
+
+server ..> db : Store Data
+
+server ..> Internet : Connect to Internet
+
+@enduml
+
