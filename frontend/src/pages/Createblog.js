@@ -83,7 +83,7 @@ const Createblog = () => {
     const blog = { title, content: body };
     const token = JSON.parse(localStorage.getItem("user")).token;
     if (!token) return;
-    fetch("http://localhost:8000/blogs/", {
+    fetch("http://localhost:8000/blogs/",  {
       method: "POST",
       headers: { "Content-Type": "application/json", "auth-token": token },
       body: JSON.stringify(blog),

@@ -12,7 +12,7 @@ const BlogInfo = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    fetch("http://localhost:8000/blogs/" + id, {
+    fetch("http://localhost:8000/blogs/"  + id, {
       method: "DELETE",
       headers:{
         "auth-token": user?.token

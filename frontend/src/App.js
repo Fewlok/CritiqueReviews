@@ -19,7 +19,9 @@ import UpdateBlog from "./pages/UpdateBlog";
 //cd to the frontend and use: npm start     that will start up the website itself.
 //do these in 2 different terminals!!!
 
-
+//to host online use a vpn (recommended) then use lt --port 8000 for backend and lt --port 3000 for frontend.
+// after that you want to start the frontend and change all the api links to the url given in the backend url. then run backend.
+//future note: if there is an issue with connection to mongodb atlas, either the password is incorrect, the ip isnt whitelisted OR the wifi is blocking the connection due to IP restrictions (stuff in schools or jobs thats common)
 function App() {
   const { user } = useAuthContext()
 
